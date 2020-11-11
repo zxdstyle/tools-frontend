@@ -1,0 +1,35 @@
+.profile_menu {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 36px 48px rgba(27, 25, 148, 0.08);
+  border-radius: 5px;
+  background-color: #423a6f;
+
+  .ant-dropdown-menu-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #3a3361;
+    font-size: 16px;
+    color: #8c87c2;
+    font-weight: 500;
+
+    &:last-child {
+      border: 0;
+    }
+    &.logout {
+      color: #ff788e;
+        i {
+            color: #FF788E;
+        }
+    }
+    i {
+      margin-right: 10px;
+      font-size: 22px;
+      color: #7b6fff;
+      font-weight: bold;
+    }
+    &:hover,&:focus,&.active {
+      background-color: transparent;
+    }
+  }
+}
