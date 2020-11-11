@@ -1,17 +1,17 @@
 <template>
-  <div id="preloader">
-    <div class="sk-three-bounce">
-      <div class="sk-child sk-bounce1"></div>
-      <div class="sk-child sk-bounce2"></div>
-      <div class="sk-child sk-bounce3"></div>
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
 export default {
-  name: "Preloader"
-};
+    name: "Preloader"
+}
 </script>
 
 <style scoped></style>

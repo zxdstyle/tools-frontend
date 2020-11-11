@@ -7915,23 +7915,7 @@ h6 {
   background-position: center;
   background: rgba(58, 51, 97, 0.95); }
 
-.page_title {
-  padding: 15px 0px 15px;
-  position: relative;
-  background: transparent;
-  margin-top: 80px;
-  margin-left: 75px; }
-  .page_title p {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 0px;
-    color: #7B6FFF; }
-    .page_title p span {
-      line-height: 30px;
-      font-weight: 500;
-      color: #fff;
-      margin-left: 10px;
-      opacity: 1; }
+
 
 .breadcrumbs {
   display: flex;
@@ -8132,53 +8116,7 @@ h6 {
     top: 15px;
     margin: 0px !important; } }
 
-.account_money {
-  margin-right: 20px; }
-  @media only screen and (max-width: 767px) {
-    .account_money {
-      display: none; } }
-  .account_money ul li {
-    display: inline;
-    justify-content: space-around; }
-    .account_money ul li.crypto {
-      background: #423A6F;
-      padding: 8px 15px 8px 22px;
-      color: #7B6FFF;
-      border-radius: 30px 0 0px 30px;
-      border: 1px solid #423A6F;
-      transition: all 0.3s ease-in-out; }
-      @media only screen and (max-width: 1199px) {
-        .account_money ul li.crypto {
-          padding: 8px 10px 8px 20px; } }
-      @media only screen and (min-width: 1200px) and (max-width: 1350px) {
-        .account_money ul li.crypto {
-          padding: 8px 10px 8px 20px; } }
-      .account_money ul li.crypto span {
-        margin-right: 10px;
-        font-weight: 500; }
-        @media only screen and (max-width: 1199px) {
-          .account_money ul li.crypto span {
-            margin-right: 10px; } }
-        @media only screen and (min-width: 1200px) and (max-width: 1350px) {
-          .account_money ul li.crypto span {
-            margin-right: 10px; } }
-      .account_money ul li.crypto:hover, .account_money ul li.crypto:focus, .account_money ul li.crypto.active {
-        background: #423A6F;
-        color: #fff;
-        border: 1px solid rgba(255, 255, 255, 0.08); }
-    .account_money ul li.usd {
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 8px 20px 8px 10px;
-      border-radius: 0px 30px 30px 0px; }
-      @media only screen and (max-width: 1199px) {
-        .account_money ul li.usd {
-          padding: 8px 20px 8px 10px; } }
-      @media only screen and (min-width: 1200px) and (max-width: 1350px) {
-        .account_money ul li.usd {
-          padding: 8px 20px 8px 10px; } }
-      .account_money ul li.usd span {
-        font-weight: 500;
-        color: #fff; }
+
 
 .footer {
   padding: 20px 0;
@@ -8228,24 +8166,7 @@ h6 {
   height: 100%;
   width: 75px; }
 
-.menu {
-  margin-top: 100px; }
-  .menu ul li {
-    text-align: center; }
-    .menu ul li a {
-      padding: 12px 15px;
-      display: inline-block;
-      margin-bottom: 5px;
-      border-radius: 5px; }
-      .menu ul li a:hover, .menu ul li a:focus, .menu ul li a.active {
-        background: #3A3361; }
-      .menu ul li a.active {
-        background: #7B6FFF; }
-        .menu ul li a.active i {
-          color: #fff; }
-      .menu ul li a i {
-        color: #9591CC;
-        font-size: 24px; }
+
 
 .card {
   border: 0px;
@@ -8793,46 +8714,7 @@ button,
       font-size: 24px;
       color: #fff; }
 
-.profile_chart.card .card-header {
-  border: 0px; }
-  @media only screen and (max-width: 767px) {
-    .profile_chart.card .card-header {
-      flex-direction: column; } }
-  .profile_chart.card .card-header .duration-option {
-    box-shadow: 0px 36px 48px rgba(31, 66, 135, 0.04); }
-    .profile_chart.card .card-header .duration-option a {
-      display: inline-block;
-      margin-left: 10px;
-      text-align: center;
-      padding: 5px 15px;
-      border: 1px solid #423A6F;
-      float: left;
-      transition: all 0.3s ease;
-      font-weight: 500;
-      border-radius: 5px;
-      color: #fff; }
-      .profile_chart.card .card-header .duration-option a:hover, .profile_chart.card .card-header .duration-option a:focus, .profile_chart.card .card-header .duration-option a.active {
-        background: #7B6FFF;
-        color: #fff;
-        border-right: 1px solid transparent; }
 
-.profile_chart.card .card-body .chart_current_data {
-  min-width: 165px;
-  border-radius: 16px;
-  background: #fff;
-  padding: 13px 20px;
-  display: inline-block;
-  margin-bottom: 40px; }
-  .profile_chart.card .card-body .chart_current_data h3 {
-    font-size: 36px;
-    color: #7B6FFF;
-    margin-bottom: 0px;
-    line-height: 43px; }
-  .profile_chart.card .card-body .chart_current_data p {
-    margin-bottom: 0px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #f5f5f5; }
 
 .chart-stat {
   background: #423A6F;
@@ -8881,15 +8763,7 @@ button,
 .transaction-table .badge {
   color: #fff; }
 
-.balance-widget ul li {
-  padding: 18px;
-  align-items: center;
-  border-bottom: 0px solid #423A6F;
-  background: #423A6F;
-  border-radius: 15px;
-  margin-bottom: 15px; }
-  .balance-widget ul li i {
-    font-size: 30px; }
+
 
 .total-balance {
   padding: 50px 0 35px;

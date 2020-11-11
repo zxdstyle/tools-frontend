@@ -25,47 +25,9 @@
             </div>
         </div>
 
-        <div class="sidebar">
-            <div class="menu">
-                <ul>
-                    <li>
-                        <a href="index.html" data-toggle="tooltip" data-placement="right" title="Home">
-                            <span><i class="la la-igloo"></i></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="buy-sell.html" data-toggle="tooltip" data-placement="right" title="Exchange">
-                            <span><i class="la la-exchange-alt"></i></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="accounts.html" data-toggle="tooltip" data-placement="right" title="Account">
-                            <span><i class="la la-user"></i></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="settings.html" data-toggle="tooltip" data-placement="right" title="Setting">
-                            <span><i class="la la-tools"></i></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <side-bar></side-bar>
 
-        <div class="page_title">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="page_title-content">
-                            <p>
-                                Welcome Back,
-                                <span> Maria Pascle</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <page-title></page-title>
 
         <router-view></router-view>
 
@@ -92,6 +54,8 @@
 </template>
 
 <script>
+import PageTitle from "@/views/layouts/components/PageTitle"
+import SideBar from "@/views/layouts/components/SideBar"
 import Preloader from "@/views/layouts/components/Preloader"
 import Profile from "@/views/layouts/components/Profile"
 import HeaderInfo from "@/views/layouts/components/HeaderInfo"
@@ -102,7 +66,9 @@ export default {
     components: {
         Preloader,
         Profile,
-        HeaderInfo
+        SideBar,
+        HeaderInfo,
+        PageTitle
     },
     setup() {
         const store = useStore()
