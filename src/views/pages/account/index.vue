@@ -78,8 +78,8 @@
                             </div>
 
                             <div class="btn-group mb-3">
-                                <button class="btn btn-primary">Sell</button>
-                                <button class="btn btn-success">Buy</button>
+                                <button class="btn btn-primary" v-waves>Sell</button>
+                                <button class="btn btn-success" v-waves>Buy</button>
                             </div>
                         </div>
                     </div>

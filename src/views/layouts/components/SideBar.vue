@@ -1,25 +1,42 @@
 <template>
     <div class="sidebar">
-        <a-menu>
-            <a-menu-item key="1">
-                <i class="iconfont icon-dashboard"></i>
-            </a-menu-item>
-            <a-menu-item key="2">
-                <i class="iconfont icon-exchange"></i>
-            </a-menu-item>
-            <a-menu-item key="3">
-                <i class="iconfont icon-user"></i>
-            </a-menu-item>
-            <a-menu-item key="4">
-                <i class="iconfont icon-tools"></i>
+        <a-menu @click="changeMenu" v-model:selectedKeys="activeMenu">
+            <a-menu-item v-for="menu in menuList" :key="menu.name">
+                <a-tooltip placement="right">
+                    <i class="iconfont" :class="menu.meta ? menu.meta.icon : ''"></i>
+                    <template v-if="menu.title" #title>{{ menu.title }}</template>
+                </a-tooltip>
             </a-menu-item>
         </a-menu>
     </div>
 </template>
 
 <script>
+import { ref } from "vue"
+import { useStore } from "vuex"
+import { useRouter } from "vue-router"
+
 export default {
-    name: "SideBar"
+    name: "SideBar",
+    setup() {
+        const router = useRouter()
+        const store = useStore()
+
+        let activeMenu = ref([router.currentRoute.value.name])
+
+        const changeMenu = item => {
+            router.push({ name: item.key })
+            activeMenu = ref([router.currentRoute.value.name])
+        }
+
+        const menuList = store.getters.menuList
+
+        return {
+            activeMenu,
+            changeMenu,
+            menuList
+        }
+    }
 }
 </script>
 
@@ -28,9 +45,13 @@ export default {
     margin-top: 100px;
     background: transparent;
     border-right: none;
+    text-align: center;
+
+    ul {
+        width: 100%;
+    }
 
     li {
-        width: 100%;
         text-align: center;
         padding: 0 15px;
         display: inline-block;
@@ -41,7 +62,7 @@ export default {
         &:focus {
             background: #3a3361;
         }
-        &.active {
+        &.ant-menu-item-selected {
             background: #7b6fff;
             i {
                 color: #fff;

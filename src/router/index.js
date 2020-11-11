@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router"
 import store from "../store"
 import Default from "../views/layouts/default.vue"
+import routeList from "./routes"
 
 const routes = [
     {
@@ -10,29 +11,9 @@ const routes = [
         children: [
             {
                 path: "/",
-                name: "Home",
-                component: () => import(/* webpackChunkName: "page" */ "../views/pages/dashboard/index.vue")
+                redirect: "/dashboard"
             },
-            {
-                path: "/about",
-                name: "About",
-                component: () => import(/* webpackChunkName: "about" */ "../views/pages/about/index.vue")
-            },
-            {
-                path: "/bug",
-                name: "bug",
-                component: () => import(/* webpackChunkName: "about" */ "../views/pages/bug/index.vue")
-            },
-            {
-                path: "/history",
-                name: "history",
-                component: () => import(/* webpackChunkName: "about" */ "../views/pages/history/index.vue")
-            },
-            {
-                path: "/setting",
-                name: "setting",
-                component: () => import(/* webpackChunkName: "about" */ "../views/pages/setting/index.vue")
-            }
+            ...routeList
         ]
     },
     {

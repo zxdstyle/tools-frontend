@@ -1,16 +1,16 @@
 <template>
     <a-dropdown :trigger="['click']" class="profile_log">
         <div class="user">
-            <span class="thumb"><i class="la la-user"></i></span>
+            <span class="thumb"><i class="iconfont icon-user"></i></span>
             <span class="name">Maria Pascle</span>
-            <span class="arrow"><i class="la la-angle-down"></i></span>
+            <span class="arrow"><i class="iconfont icon-down"></i></span>
         </div>
 
         <template #overlay>
-            <a-menu class="profile_menu">
-                <a-menu-item key="1"><i class="iconfont icon-user"></i> Account </a-menu-item>
-                <a-menu-item key="2"><i class="iconfont icon-history"></i> History </a-menu-item>
-                <a-menu-item key="3"><i class="iconfont icon-setting"></i> Setting</a-menu-item>
+            <a-menu @click="changeMenu" class="profile_menu">
+                <a-menu-item key="account"><i class="iconfont icon-user"></i> Account </a-menu-item>
+                <a-menu-item key="history"><i class="iconfont icon-history"></i> History </a-menu-item>
+                <a-menu-item key="setting"><i class="iconfont icon-setting"></i> Setting</a-menu-item>
                 <a-menu-item key="3"><i class="iconfont icon-lock"></i> Lock</a-menu-item>
                 <a-menu-item key="3" class="logout"><i class="iconfont icon-logout"></i> Logout</a-menu-item>
             </a-menu>
@@ -19,8 +19,20 @@
 </template>
 
 <script>
+import { useRouter } from "vue-router"
 export default {
-    name: "Profile"
+    name: "Profile",
+    setup() {
+        const router = useRouter()
+
+        const changeMenu = item => {
+            router.push({ name: item.key })
+        }
+
+        return {
+            changeMenu
+        }
+    }
 }
 </script>
 
@@ -67,11 +79,11 @@ export default {
     }
 }
 
-::v-deep(.user .arrow) {
+.user ::v-deep(.arrow) {
     color: #fff;
 }
 
-::v-deep(.user .arrow i) {
+.user .arrow ::v-deep(i) {
     font-weight: bold;
     font-size: 16px;
     line-height: 16px;

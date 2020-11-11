@@ -29,7 +29,7 @@
 
         <page-title></page-title>
 
-        <router-view></router-view>
+        <router-view class="animated fadeIn animate__delay-1s animate__faster"></router-view>
 
         <div class="footer">
             <div class="container-fluid">
@@ -82,4 +82,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.animate-info {
+    animation-delay: 0;
+}
+</style>

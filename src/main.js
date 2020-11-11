@@ -7,10 +7,14 @@ import "./assets/css/app.scss"
 
 const app = createApp(App)
 
-import { Dropdown, Menu } from "ant-design-vue"
+import { Dropdown, Menu, Tooltip } from "ant-design-vue"
+app.component(Tooltip.name, Tooltip)
 app.component(Dropdown.name, Dropdown)
 app.component(Menu.name, Menu)
 app.component(Menu.Item.name, Menu.Item)
+
+import waves from "@/directive/waves/waves"
+app.directive("waves", waves)
 
 app.use(store)
     .use(router)
