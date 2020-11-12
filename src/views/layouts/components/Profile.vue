@@ -10,9 +10,9 @@
             <a-menu @click="changeMenu" class="profile_menu">
                 <a-menu-item key="account"><i class="iconfont icon-user"></i> Account </a-menu-item>
                 <a-menu-item key="history"><i class="iconfont icon-history"></i> History </a-menu-item>
-                <a-menu-item key="setting"><i class="iconfont icon-setting"></i> Setting</a-menu-item>
-                <a-menu-item key="3"><i class="iconfont icon-lock"></i> Lock</a-menu-item>
-                <a-menu-item key="3" class="logout"><i class="iconfont icon-logout"></i> Logout</a-menu-item>
+                <a-menu-item key="edit-profile"><i class="iconfont icon-setting"></i> Setting</a-menu-item>
+                <a-menu-item key="lock"><i class="iconfont icon-lock"></i> Lock</a-menu-item>
+                <a-menu-item key="login" class="logout"><i class="iconfont icon-logout"></i> Logout</a-menu-item>
             </a-menu>
         </template>
     </a-dropdown>

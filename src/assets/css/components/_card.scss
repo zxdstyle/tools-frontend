@@ -1,0 +1,24 @@
+.ant-card {
+    padding: 18px;
+    align-items: center;
+    background: #423a6f;
+    border-radius: 15px;
+    color: #fff;
+
+    &:hover {
+        animation: pulse;
+        animation-duration: 1s;
+    }
+
+    .ant-card-head-title {
+        color: #fff;
+    }
+
+    .ant-card-head {
+        border-bottom: 1px solid #8C87C2;
+    }
+}
+
+.ant-card-bordered {
+    border: 0 solid #423a6f;
+}
