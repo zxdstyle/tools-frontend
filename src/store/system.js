@@ -1,8 +1,10 @@
 import menuList from "@/router/menu"
+import tools from "@/utils/tools"
 export default {
     state: {
         loading: false,
-        menuList: []
+        menuList: [],
+        allTools: []
     },
     mutations: {
         setLoading(state, loading) {
@@ -12,6 +14,9 @@ export default {
     getters: {
         menuList() {
             return menuList
+        },
+        allTools() {
+            return tools
         }
     }
 }
