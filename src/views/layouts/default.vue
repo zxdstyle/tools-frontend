@@ -82,8 +82,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.animate-info {
-    animation-delay: 0;
-}
-</style>
+<style lang="scss" scoped></style>

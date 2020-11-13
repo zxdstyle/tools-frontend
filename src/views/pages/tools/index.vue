@@ -9,13 +9,8 @@
                         <div v-for="tool in group.children" :key="tool.name" class="col-md-3 mb-5">
                             <a-card hoverable size="small" :title="tool.name">
                                 <template #extra><a href="#">more</a></template>
-                                <div class="row">
-                                    <div class="col-md-5 icon-box">
-                                        <img class="tool-icon" :src="tool.icon" alt="" />
-                                    </div>
-                                    <div class="col-md-7">
-                                        <p>{{ tool.describe }}</p>
-                                    </div>
+                                <div class="tool-content" :style="'background-image: url(' + tool.icon + ')'">
+                                    <p>{{ tool.describe }}</p>
                                 </div>
                             </a-card>
                         </div>
@@ -42,23 +37,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-p {
-    padding: 25px;
-    width: 200px;
-    height: 180px;
-    background: url("../../../assets/images/background.png") no-repeat center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-}
+.tool-content {
+    height: 100px;
+    width: 100%;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
 
-.icon-box {
-    display: flex;
-    align-items: center;
-}
-
-.tool-icon {
-    width: 160px;
-    height: 150px;
+    p {
+        height: 100%;
+        width: 60%;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 0;
+    }
 }
 </style>
