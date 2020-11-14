@@ -14,7 +14,8 @@
 
 <script>
 export default {
-    name: "PageTitle"
+    name: "PageTitle",
+    setup() {}
 }
 </script>
 

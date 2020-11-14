@@ -6,8 +6,13 @@
                     <a-divider orientation="left">{{ group.title }}</a-divider>
 
                     <div class="row">
-                        <div v-for="tool in group.children" :key="tool.name" class="col-md-3 mb-5">
-                            <a-card hoverable size="small" :title="tool.name">
+                        <div v-for="tool in group.children" :key="tool.key" class="col-md-3 mb-5">
+                            <a-card
+                                @click="$router.push(`/tools/${tool.key}`)"
+                                hoverable
+                                size="small"
+                                :title="tool.name"
+                            >
                                 <template #extra><a href="#">more</a></template>
                                 <div class="tool-content" :style="'background-image: url(' + tool.icon + ')'">
                                     <p>{{ tool.describe }}</p>
@@ -29,6 +34,7 @@ export default {
         const store = useStore()
 
         let tools = store.getters.allTools
+
         return {
             tools
         }

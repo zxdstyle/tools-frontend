@@ -1,0 +1,20 @@
+.ant-input {
+    background-color: #423A6F;
+    border: 1px solid #423A6F;
+    border-radius: 15px;
+    color: #fff;
+    opacity: 0.5;
+    font-size: 18px;
+
+    &:focus, &:hover {
+        border-color: #7B6FFF;
+    }
+
+    &:placeholder-shown {
+        font-size: 18px;
+    }
+}
+
+textarea.ant-input {
+    padding: 15px;
+}
