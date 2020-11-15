@@ -5,7 +5,7 @@
                 @change="onJsonChange"
                 v-model:value="formData.jsonStr"
                 placeholder="请输入合法的JSON格式数据"
-                :rows="16"
+                autoSize
             />
 
             <a-form :model="formData" class="mt-5">
@@ -18,20 +18,20 @@
             </a-form>
         </div>
         <div class="col-md-6">
-            <a-textarea v-model:value="structStr" placeholder="这里是Golang Struct结构体" :rows="24" />
+            <a-textarea v-model:value="structStr" placeholder="这里是Golang Struct结构体" autoSize />
         </div>
     </div>
 </template>
 
 <script>
 import { throttle } from "lodash"
-import { ref, reactive } from "vue"
+import { ref, reactive, getCurrentInstance } from "vue"
 import Tools from "@/models/tools"
 export default {
     name: "json-struct",
     setup() {
         let structStr = ref("")
-
+        const { ctx } = getCurrentInstance()
         let formData = reactive({
             pkgName: "model",
             modelName: "Test",
@@ -47,7 +47,7 @@ export default {
         const json2struct = () => {
             Tools.json2struct(formData).then(res => {
                 structStr.value = res.data
-                console.log(structStr.value)
+                ctx.$message.success("转换成功")
             })
         }
 

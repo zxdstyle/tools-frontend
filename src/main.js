@@ -10,6 +10,10 @@ antv.forEach(component => {
     app.component(component.name, component)
 })
 
+import { message, notification } from "ant-design-vue"
+app.config.globalProperties.$message = message
+app.config.globalProperties.$notice = notification
+
 import "./assets/css/app.scss"
 
 import waves from "@/directive/waves/waves"

@@ -31,8 +31,10 @@ import ProfileChart from "@/views/pages/dashboard/components/ProfileChart"
 import Follow from "@/views/pages/dashboard/components/Follow"
 import Exchange from "@/views/pages/dashboard/components/Exchange"
 import RecentActivities from "@/views/pages/dashboard/components/RecentActivities"
+
 export default {
     name: "Home",
-    components: { Portfolio, ProfileChart, Follow, Exchange, RecentActivities }
+    components: { Portfolio, ProfileChart, Follow, Exchange, RecentActivities },
+    setup() {}
 }
 </script>

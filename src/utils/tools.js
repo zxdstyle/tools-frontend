@@ -6,8 +6,8 @@ export default [
             {
                 name: "JSON 格式化",
                 key: "json-format",
-                icon: "",
-                describe: ""
+                icon: "https://badpen.oss-cn-shanghai.aliyuncs.com/json.png",
+                describe: "JSON 字符串格式美化"
             }
         ]
     },
