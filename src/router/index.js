@@ -35,6 +35,15 @@ const routes = [
         path: "/policy",
         name: "policy",
         component: () => import(/* webpackChunkName: "about" */ "../views/pages/article/policy.vue")
+    },
+    {
+        path: "/404",
+        name: "404",
+        component: () => import(/* webpackChunkName: "about" */ "../views/pages/error/404.vue")
+    },
+    {
+        path: "/:pathMatch(.*)*",
+        redirect: "/404"
     }
 ]
 

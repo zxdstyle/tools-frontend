@@ -10,7 +10,7 @@
                         <div
                             v-for="tool in group.children"
                             :key="tool.key"
-                            class="col-xs-12 col-sm-6 col-md-4 col-xl-4 col-lg-3 mb-5"
+                            class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-5"
                         >
                             <a-card
                                 @click="$router.push(`/tools/${tool.key}`)"
