@@ -62,7 +62,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .balance-widget ul li {
     padding: 18px;
     align-items: center;

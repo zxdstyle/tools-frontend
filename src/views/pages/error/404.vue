@@ -33,34 +33,34 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-$bgColor: #3a3361;
-$textColor: #d6c7bc;
-$color1: #b38ca5;
-$color2: #d7949c;
-$color3: #d76f74;
+<style lang="less" scoped>
+@bgColor: #3a3361;
+@textColor: #d6c7bc;
+@color1: #b38ca5;
+@color2: #d7949c;
+@color3: #d76f74;
 
-$digitWidth: 200px;
-$digitHeight: 260px;
+@digitWidth: 200px;
+@digitHeight: 260px;
 
-$legHeight: $digitHeight / 4;
+@legHeight: @digitHeight / 4;
 
 // =========
 
-@mixin gradient($direction) {
-    background: linear-gradient($direction, $color1 0%, $color1 20%, $color2 50%, $color3 100%);
+.gradient(@direction) {
+    background: linear-gradient(@direction, @color1 0%, @color1 20%, @color2 50%, @color3 100%);
 }
 
 // =========
 
 body {
-    background-color: $bgColor;
+    background-color: @bgColor;
 }
 
 h1 {
     font-family: "Lato", sans-serif;
     text-transform: uppercase;
-    color: $textColor;
+    color: @textColor;
     font-weight: 700;
     text-align: center;
 }
@@ -86,14 +86,14 @@ h1 {
 
 .four-wrapper {
     position: relative;
-    width: $digitWidth;
-    height: $digitHeight;
+    width: @digitWidth;
+    height: @digitHeight;
     margin: 12px;
 
     .leg-1 {
-        @include gradient(to right);
+        .gradient(to right);
         width: 210px;
-        height: $legHeight;
+        height: @legHeight;
         overflow: hidden;
         position: absolute;
         top: 44px;
@@ -106,9 +106,9 @@ h1 {
     }
 
     .leg-2 {
-        @include gradient(to right);
+        .gradient(to right);
         width: 100%;
-        height: $legHeight;
+        height: @legHeight;
         overflow: hidden;
         position: absolute;
         top: 113px;
@@ -142,8 +142,8 @@ h1 {
     }
 
     .leg-3 {
-        @include gradient(to top);
-        width: $legHeight;
+        .gradient(to top);
+        width: @legHeight;
         height: 235px;
         overflow: hidden;
         position: absolute;
@@ -177,7 +177,7 @@ h1 {
 }
 
 .zero-wrapper {
-    @include gradient(45deg);
+    .gradient(45deg);
     position: relative;
     width: 235px;
     height: 235px;
@@ -218,7 +218,7 @@ h1 {
         transform: translate(-50%, -50%);
         width: round(235px / 2.25);
         height: round(235px / 2.25);
-        background-color: $bgColor;
+        background-color: @bgColor;
         border-radius: 50%;
         box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
         z-index: 2;

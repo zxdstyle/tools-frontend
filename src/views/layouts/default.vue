@@ -2,11 +2,13 @@
     <preloader v-if="loading"></preloader>
 
     <div id="main-wrapper" class="show">
-        <div class="header">
+        <div class="header" :class="{ collapsed: collapse }">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-12">
                         <nav class="navbar navbar-expand-lg navbar-light px-0 justify-content-between">
+                            <i @click="onMenuToggle" class="menu-toggle iconfont icon-menu"></i>
+
                             <a class="navbar-brand" href="index.html">
                                 <img src="@/assets/images/w_logo.png" alt="" />
                                 <span>Elaenia</span>
@@ -25,11 +27,14 @@
             </div>
         </div>
 
-        <side-bar></side-bar>
+        <side-bar :collapse="collapse"></side-bar>
 
         <page-title></page-title>
 
-        <router-view class="animated fadeIn animate__delay-1s animate__faster"></router-view>
+        <router-view
+            :class="{ collapsed: collapse }"
+            class="animated fadeIn animate__delay-1s animate__faster"
+        ></router-view>
 
         <div class="footer">
             <div class="container-fluid">
@@ -61,6 +66,7 @@ import Profile from "@/views/layouts/components/Profile"
 import HeaderInfo from "@/views/layouts/components/HeaderInfo"
 import { computed } from "vue"
 import { useStore } from "vuex"
+
 export default {
     name: "default",
     components: {
@@ -75,11 +81,32 @@ export default {
 
         const loading = computed(() => store.state.system.loading)
 
+        let collapse = computed(() => store.state.system.menuCollapse)
+
+        const onMenuToggle = () => {
+            store.commit("setMenuCollapse")
+        }
+
         return {
-            loading
+            loading,
+            collapse,
+            onMenuToggle
         }
     }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="less" scoped>
+.content-body {
+    margin-left: 175px;
+    margin-top: 15px;
+
+    &.collapsed {
+        margin-left: 75px;
+    }
+}
+
+.menu-toggle {
+    cursor: pointer;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="page_title">
+    <div class="page_title" :class="{ collapsed: collapse }">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xl-12">
@@ -13,20 +13,35 @@
 </template>
 
 <script>
+import { useStore } from "vuex"
+import { computed } from "vue"
 export default {
     name: "PageTitle",
-    setup() {}
+    setup() {
+        const store = useStore()
+
+        const collapse = computed(() => store.state.system.menuCollapse)
+
+        return {
+            collapse
+        }
+    }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .page_title {
     padding: 15px 0 15px;
     position: relative;
     background: transparent;
     margin-top: 80px;
-    margin-left: 75px;
+    margin-left: 175px;
+
+    &.collapsed {
+        margin-left: 75px;
+    }
 }
+
 .page_title p {
     font-size: 18px;
     font-weight: 500;

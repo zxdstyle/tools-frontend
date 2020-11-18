@@ -4,11 +4,16 @@ export default {
     state: {
         loading: false,
         menuList: [],
-        allTools: []
+        allTools: [],
+        // 菜单收缩状态
+        menuCollapse: false
     },
     mutations: {
         setLoading(state, loading) {
             state.loading = loading
+        },
+        setMenuCollapse(state) {
+            state.menuCollapse = !state.menuCollapse
         }
     },
     getters: {

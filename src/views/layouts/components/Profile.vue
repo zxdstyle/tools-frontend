@@ -36,7 +36,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .profile_log {
     cursor: pointer;
     display: flex;

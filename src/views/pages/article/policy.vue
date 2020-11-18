@@ -191,7 +191,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .page_title {
     padding: 15px 0 15px;
     position: relative;

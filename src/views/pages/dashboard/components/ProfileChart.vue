@@ -195,7 +195,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .profile_chart.card .card-header {
     border: 0px;
 }

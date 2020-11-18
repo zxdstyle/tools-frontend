@@ -63,7 +63,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .tool-content {
     height: 100px;
     width: 100%;

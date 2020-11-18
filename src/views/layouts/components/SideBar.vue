@@ -1,6 +1,7 @@
 <template>
     <div class="sidebar">
-        <a-menu @click="changeMenu" v-model:selectedKeys="activeMenu">
+        <div class="mini-logo pt-3"><img src="@/assets/images/w_logo.png" /></div>
+        <a-menu @click="changeMenu" v-model:selectedKeys="activeMenu" mode="inline" :inline-collapsed="collapse">
             <a-menu-item v-for="menu in menuList" :key="menu.name">
                 <a-tooltip placement="right">
                     <i class="iconfont" :class="menu.meta ? menu.meta.icon : ''"></i>
@@ -18,6 +19,12 @@ import { useRouter } from "vue-router"
 
 export default {
     name: "SideBar",
+    props: {
+        collapse: {
+            required: true,
+            type: Boolean
+        }
+    },
     setup() {
         const router = useRouter()
         const store = useStore()
@@ -40,10 +47,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .ant-menu {
-    margin-top: 100px;
-    background: transparent;
+    margin-top: 60px;
+    /*background: transparent;*/
     border-right: none;
     text-align: center;
 
@@ -73,6 +80,15 @@ export default {
             color: #9591cc;
             font-size: 24px;
         }
+    }
+}
+
+.mini-logo {
+    width: 100%;
+    text-align: center;
+
+    img {
+        width: 35px;
     }
 }
 </style>
