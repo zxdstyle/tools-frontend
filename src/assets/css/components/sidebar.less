@@ -5,7 +5,62 @@
     height: 100%;
     max-width: 175px;
 
+    .ant-menu {
+        margin-top: 60px;
+        background: transparent;
+        border-right: none;
+        text-align: center;
+        width: 100%;
+
+        .ant-menu-item {
+            text-align: left;
+            padding: 0 15px;
+            display: inline-flex;
+            align-items: center;
+            border-radius: 5px;
+            color: #9591cc;
+            font-size: 16px;
+
+            span {
+                margin-left: 5px;
+            }
+
+            &:hover,
+            &:focus {
+                background: #3a3361;
+            }
+
+            &.ant-menu-item-selected {
+                background: #7b6fff;
+                color: #fff;
+                i {
+                    color: #fff;
+                }
+            }
+
+            i {
+                color: #9591cc;
+                font-size: 24px;
+            }
+        }
+    }
+
     .ant-menu-inline-collapsed {
         width: 75px;
+
+        .ant-menu-item {
+            text-align: center;
+            padding: 0 15px !important;
+        }
+    }
+
+    .ant-menu-inline {
+        .ant-menu-item {
+            width: calc(100% - 20px);
+        }
+    }
+
+    .ant-menu-item-selected {
+        color: #fff;
     }
 }

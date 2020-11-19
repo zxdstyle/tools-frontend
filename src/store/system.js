@@ -6,7 +6,9 @@ export default {
         menuList: [],
         allTools: [],
         // 菜单收缩状态
-        menuCollapse: false
+        menuCollapse: false,
+        // 主题
+        themeMode: "dark"
     },
     mutations: {
         setLoading(state, loading) {
@@ -14,6 +16,9 @@ export default {
         },
         setMenuCollapse(state) {
             state.menuCollapse = !state.menuCollapse
+        },
+        setThemeMode(state, mode) {
+            state.themeMode = mode
         }
     },
     getters: {

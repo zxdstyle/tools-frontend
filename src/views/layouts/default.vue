@@ -9,11 +9,6 @@
                         <nav class="navbar navbar-expand-lg navbar-light px-0 justify-content-between">
                             <i @click="onMenuToggle" class="menu-toggle iconfont icon-menu"></i>
 
-                            <a class="navbar-brand" href="index.html">
-                                <img src="@/assets/images/w_logo.png" alt="" />
-                                <span>Elaenia</span>
-                            </a>
-
                             <div class="dashboard_log my-2">
                                 <div class="d-flex align-items-center">
                                     <header-info></header-info>
@@ -36,7 +31,7 @@
             class="animated fadeIn animate__delay-1s animate__faster"
         ></router-view>
 
-        <div class="footer">
+        <div class="footer" :class="{ collapsed: collapse }">
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-md-6">
@@ -46,15 +41,17 @@
                     </div>
                     <div class="col-xl-6 col-md-6 text-lg-right text-center">
                         <div class="social">
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="iconfont icon-github"></i></a>
+                            <a href="#"><i class="iconfont icon-gitee"></i></a>
+                            <a href="#"><i class="iconfont icon-leetcode"></i></a>
+                            <a href="#"><i class="iconfont icon-facebook"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <CustomizeTheme></CustomizeTheme>
     </div>
 </template>
 
@@ -64,6 +61,8 @@ import SideBar from "@/views/layouts/components/SideBar"
 import Preloader from "@/views/layouts/components/Preloader"
 import Profile from "@/views/layouts/components/Profile"
 import HeaderInfo from "@/views/layouts/components/HeaderInfo"
+import CustomizeTheme from "@/views/layouts/components/CustomizeTheme"
+
 import { computed } from "vue"
 import { useStore } from "vuex"
 
@@ -74,7 +73,8 @@ export default {
         Profile,
         SideBar,
         HeaderInfo,
-        PageTitle
+        PageTitle,
+        CustomizeTheme
     },
     setup() {
         const store = useStore()

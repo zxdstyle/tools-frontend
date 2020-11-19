@@ -1,12 +1,19 @@
 <template>
     <div class="sidebar">
-        <div class="mini-logo pt-3"><img src="@/assets/images/w_logo.png" /></div>
+        <div class="mini-logo pt-3">
+            <img src="@/assets/images/w_logo.png" />
+            <span v-if="!collapse">Elaenia</span>
+        </div>
         <a-menu @click="changeMenu" v-model:selectedKeys="activeMenu" mode="inline" :inline-collapsed="collapse">
             <a-menu-item v-for="menu in menuList" :key="menu.name">
-                <a-tooltip placement="right">
+                <a-tooltip v-if="collapse" placement="right">
                     <i class="iconfont" :class="menu.meta ? menu.meta.icon : ''"></i>
                     <template v-if="menu.title" #title>{{ menu.title }}</template>
                 </a-tooltip>
+                <template v-else>
+                    <i class="iconfont" :class="menu.meta ? menu.meta.icon : ''"></i>
+                    <span>{{ menu.title }}</span>
+                </template>
             </a-menu-item>
         </a-menu>
     </div>
@@ -48,47 +55,22 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.ant-menu {
-    margin-top: 60px;
-    /*background: transparent;*/
-    border-right: none;
-    text-align: center;
-
-    ul {
-        width: 100%;
-    }
-
-    li {
-        text-align: center;
-        padding: 0 15px;
-        display: inline-block;
-        margin-bottom: 5px;
-        border-radius: 5px;
-
-        &:hover,
-        &:focus {
-            background: #3a3361;
-        }
-        &.ant-menu-item-selected {
-            background: #7b6fff;
-            i {
-                color: #fff;
-            }
-        }
-
-        i {
-            color: #9591cc;
-            font-size: 24px;
-        }
-    }
-}
-
 .mini-logo {
     width: 100%;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 
     img {
         width: 35px;
+    }
+
+    span {
+        color: #fff;
+        font-weight: 700;
+        margin-left: 20px;
+        font-size: 24px;
     }
 }
 </style>

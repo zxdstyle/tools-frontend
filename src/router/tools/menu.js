@@ -2,7 +2,7 @@ export default [
     {
         path: "/tools",
         name: "tools",
-        title: "程序员百宝箱",
+        title: "百宝箱",
         meta: {
             icon: "icon-tools"
         },

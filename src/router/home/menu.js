@@ -11,6 +11,7 @@ export default [
     {
         path: "/bug",
         name: "bug",
+        title: "控制台",
         meta: {
             icon: "icon-exchange"
         },
