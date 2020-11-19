@@ -7,9 +7,18 @@
                 <div>
                     <a-radio-group name="radioGroup" v-model:value="themeMode">
                         <a-radio value="dark">dark</a-radio>
+                        <a-radio value="purple">purple</a-radio>
                         <a-radio value="light">light</a-radio>
                     </a-radio-group>
                 </div>
+            </div>
+            <div class="item d-inline-flex justify-content-between w-100 pr-3">
+                <h5>菜单收缩</h5>
+                <a-switch v-model:checked="collapse"></a-switch>
+            </div>
+            <div class="item d-inline-flex justify-content-between w-100 pr-3">
+                <h5>回到顶部</h5>
+                <a-switch v-model:checked="backTop"></a-switch>
             </div>
         </div>
     </a-drawer>
@@ -23,20 +32,36 @@ export default {
     name: "CustomizeTheme",
     setup() {
         const store = useStore()
-        let visible = ref(false)
 
+        // 显示抽屉弹窗
+        let visible = ref(false)
         const showDrawer = () => {
             visible.value = !visible.value
         }
 
+        // 主题设置
         let themeMode = computed({
             get: () => store.state.system.themeMode,
-            set: () => store.commit("setThemeMode")
+            set: value => store.commit("setThemeMode", value)
+        })
+
+        // 收缩菜单
+        let collapse = computed({
+            get: () => store.state.system.menuCollapse,
+            set: value => store.commit("setMenuCollapse", value)
+        })
+
+        // 关闭回到顶部功能
+        let backTop = computed({
+            get: () => store.state.system.backTop,
+            set: value => store.commit("setBackTop", value)
         })
 
         return {
             visible,
             showDrawer,
+            collapse,
+            backTop,
             themeMode
         }
     }
@@ -66,6 +91,18 @@ export default {
 
     &:hover {
         box-shadow: 0 8px 25px -8px rgba(115, 103, 240, 1);
+    }
+}
+
+.content {
+    .item {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #414561 !important;
+        margin-bottom: 15px;
+
+        h5 {
+            color: #ebeefd;
+        }
     }
 }
 </style>

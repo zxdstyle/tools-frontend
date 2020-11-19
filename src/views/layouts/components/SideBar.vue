@@ -4,17 +4,14 @@
             <img src="@/assets/images/w_logo.png" />
             <span v-if="!collapse">Elaenia</span>
         </div>
-        <a-menu @click="changeMenu" v-model:selectedKeys="activeMenu" mode="inline" :inline-collapsed="collapse">
-            <a-menu-item v-for="menu in menuList" :key="menu.name">
-                <a-tooltip v-if="collapse" placement="right">
-                    <i class="iconfont" :class="menu.meta ? menu.meta.icon : ''"></i>
-                    <template v-if="menu.title" #title>{{ menu.title }}</template>
-                </a-tooltip>
-                <template v-else>
-                    <i class="iconfont" :class="menu.meta ? menu.meta.icon : ''"></i>
-                    <span>{{ menu.title }}</span>
-                </template>
-            </a-menu-item>
+        <a-menu
+            @click="changeMenu"
+            v-model:selectedKeys="activeMenu"
+            v-model:openKeys="openKeys"
+            mode="inline"
+            :inline-collapsed="collapse"
+        >
+            <sub-menu v-for="menu in menuList" :menu="menu" :key="menu.name"></sub-menu>
         </a-menu>
     </div>
 </template>
@@ -24,8 +21,11 @@ import { ref } from "vue"
 import { useStore } from "vuex"
 import { useRouter } from "vue-router"
 
+import SubMenu from "./SubMenu"
+
 export default {
     name: "SideBar",
+    components: { SubMenu },
     props: {
         collapse: {
             required: true,
@@ -45,10 +45,22 @@ export default {
 
         const menuList = store.getters.menuList
 
+        let openKeys = ref([])
+        menuList.forEach(item => {
+            if (item.children && item.children.length > 0) {
+                item.children.forEach(child => {
+                    if (child.name === router.currentRoute.value.name) {
+                        openKeys.value.push(item.name)
+                    }
+                })
+            }
+        })
+
         return {
             activeMenu,
             changeMenu,
-            menuList
+            menuList,
+            openKeys
         }
     }
 }
@@ -61,6 +73,7 @@ export default {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    margin-bottom: 60px;
 
     img {
         width: 35px;

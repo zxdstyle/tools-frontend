@@ -1,4 +1,4 @@
-import menuList from "@/router/menu"
+import { menu } from "@/router/menu"
 import tools from "@/utils/tools"
 export default {
     state: {
@@ -8,7 +8,9 @@ export default {
         // 菜单收缩状态
         menuCollapse: false,
         // 主题
-        themeMode: "dark"
+        themeMode: "dark",
+        // 回到顶部
+        backTop: true
     },
     mutations: {
         setLoading(state, loading) {
@@ -19,11 +21,15 @@ export default {
         },
         setThemeMode(state, mode) {
             state.themeMode = mode
+            document.getElementsByTagName("body")[0].className = `theme-${mode}`
+        },
+        setBackTop(state) {
+            state.backTop = !state.backTop
         }
     },
     getters: {
         menuList() {
-            return menuList
+            return menu
         },
         allTools() {
             return tools

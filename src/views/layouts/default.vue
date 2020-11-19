@@ -53,6 +53,8 @@
 
         <CustomizeTheme></CustomizeTheme>
     </div>
+
+    <a-back-top v-if="backTop"></a-back-top>
 </template>
 
 <script>
@@ -83,6 +85,8 @@ export default {
 
         let collapse = computed(() => store.state.system.menuCollapse)
 
+        let backTop = computed(() => store.state.system.backTop)
+
         const onMenuToggle = () => {
             store.commit("setMenuCollapse")
         }
@@ -90,6 +94,7 @@ export default {
         return {
             loading,
             collapse,
+            backTop,
             onMenuToggle
         }
     }
