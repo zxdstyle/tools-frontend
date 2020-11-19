@@ -4,22 +4,14 @@
             <div>
                 <a-form :model="form" :label-col="labelCol" :wrapper-col="wrapperCol">
                     <a-form-item label="Activity name">
-                        <a-input v-model:value="form.name" />
+                        <a-input v-model:value="form.name" placeholder="please select your zone" />
                     </a-form-item>
                     <a-form-item label="Activity zone">
                         <a-select v-model:value="form.region" placeholder="please select your zone">
-                            <a-select-option value="jack">
-                                Jack
-                            </a-select-option>
-                            <a-select-option value="lucy">
-                                Lucy
-                            </a-select-option>
-                            <a-select-option value="disabled" disabled>
-                                Disabled
-                            </a-select-option>
-                            <a-select-option value="Yiminghe">
-                                yiminghe
-                            </a-select-option>
+                            <a-select-option value="jack">Jack</a-select-option>
+                            <a-select-option value="lucy">Lucy</a-select-option>
+                            <a-select-option value="disabled" disabled>Disabled</a-select-option>
+                            <a-select-option value="Yiminghe">yiminghe</a-select-option>
                         </a-select>
                     </a-form-item>
                     <a-form-item label="Activity time">
