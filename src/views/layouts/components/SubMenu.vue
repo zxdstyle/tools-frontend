@@ -13,7 +13,7 @@
     </a-sub-menu>
 
     <a-menu-item v-else>
-        <i class="iconfont" :class="menu.meta ? menu.meta.icon : ''"></i>
+        <i class="iconfont" :class="menu.meta ? menu.meta.icon : 'icon-yuan'"></i>
         <span>{{ menu.title }}</span>
     </a-menu-item>
 </template>

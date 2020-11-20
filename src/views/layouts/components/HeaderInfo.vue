@@ -73,7 +73,7 @@ export default {
 .account_money ul li.usd {
     border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 8px 20px 8px 10px;
-    border-radius: 0px 30px 30px 0px;
+    border-radius: 0 30px 30px 0;
 }
 @media only screen and (max-width: 1199px) {
     .account_money ul li.usd {

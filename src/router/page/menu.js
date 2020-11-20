@@ -11,28 +11,19 @@ export default [
                 path: "/page/form",
                 name: "form",
                 title: "表单",
-                meta: {
-                    icon: "icon-exchange"
-                },
                 component: () => import(/* webpackChunkName: "about" */ "@/views/pages/page/form.vue")
             },
             {
-                path: "/page/table",
-                name: "table",
-                title: "表格",
-                meta: {
-                    icon: "icon-exchange"
-                },
-                component: () => import(/* webpackChunkName: "about" */ "@/views/pages/bug/index.vue")
+                path: "/page/button",
+                name: "button",
+                title: "按钮",
+                component: () => import(/* webpackChunkName: "about" */ "@/views/pages/page/btn.vue")
             },
             {
-                path: "/page/error",
-                name: "error",
-                title: "错误",
-                meta: {
-                    icon: "icon-exchange"
-                },
-                component: () => import(/* webpackChunkName: "about" */ "@/views/pages/bug/index.vue")
+                path: "/page/breadcrumb",
+                name: "breadcrumb",
+                title: "面包屑",
+                component: () => import(/* webpackChunkName: "about" */ "@/views/pages/page/breadcrumb.vue")
             }
         ]
     }

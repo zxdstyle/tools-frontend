@@ -13,7 +13,8 @@ import {
     BackTop,
     Checkbox,
     DatePicker,
-    Select
+    Select,
+    Breadcrumb
 } from "ant-design-vue"
 
 export default [
@@ -29,6 +30,7 @@ export default [
     Form,
     Form.Item,
     Button,
+    Button.Group,
     Drawer,
     Radio,
     Radio.Group,
@@ -37,7 +39,8 @@ export default [
     Checkbox,
     Checkbox.Group,
     DatePicker,
-
+    Breadcrumb,
+    Breadcrumb.Item,
     Select.Option,
     Select.OptGroup,
     Select

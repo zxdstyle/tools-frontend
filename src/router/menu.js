@@ -9,7 +9,7 @@ let routes = []
 menu.forEach(item => {
     if (item.children) {
         item.children.forEach(child => {
-            if (!child.meta.outRoute) {
+            if (!child.meta || !child.meta.outRoute) {
                 //判断是否不需要合并进router
                 routes.push({
                     ...child,
